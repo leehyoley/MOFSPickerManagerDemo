@@ -51,6 +51,18 @@ typedef void (^PickerViewCancelBlock)(void);
 - (void)showDatePickerWithTag:(NSInteger)tag datePickerMode:(UIDatePickerMode)mode commitBlock:(DatePickerCommitBlock _Nullable )commitBlock cancelBlock:(DatePickerCancelBlock _Nullable )cancelBlock;
 
 /**
+ zyj新增需要设定最小值和最大时值的时间栏
+
+ @param tag 标记
+ @param mode 时间模式
+ @param minDate 最小时间
+ @param maxDate 最大时间
+ @param commitBlock 确定回调
+ @param cancelBlock 取消回调
+ */
+- (void)showDatePickerWithTag:(NSInteger)tag datePickerMode:(UIDatePickerMode)mode minDate:(NSDate *)minDate maxDate:(NSDate *)maxDate commitBlock:(DatePickerCommitBlock _Nullable )commitBlock cancelBlock:(DatePickerCancelBlock _Nullable )cancelBlock;
+
+/**
  * show datePicker with your custom datePickerMode ,title , cancelTitle , commitTitle.
  * @param tag : will remeber the last date you had select.
  * @param title : toolbar title

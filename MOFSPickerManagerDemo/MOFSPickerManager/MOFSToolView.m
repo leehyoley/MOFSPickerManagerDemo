@@ -8,7 +8,7 @@
 
 #import "MOFSToolView.h"
 
-#define BAR_COLOR [UIColor colorWithRed:0.090  green:0.463  blue:0.906 alpha:1]
+#define BAR_COLOR [UIColor colorWithRed:102.f/255.f  green:102.f/255.f  blue:102.f/255.f alpha:1]
 #define LINE_COLOR [UIColor colorWithRed:0.804  green:0.804  blue:0.804 alpha:1]
 #define UISCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 #define UISCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -43,7 +43,7 @@
         
         _commitBar = [UILabel new];
         _commitBar.font = [UIFont systemFontOfSize:14];
-        _commitBar.textColor = BAR_COLOR;
+        _commitBar.textColor = [UIColor colorWithRed:31.f/255.f  green:181.f/255.f  blue:159.f/255.f alpha:1];
         _commitBar.text = @"完成";
         _commitBar.textAlignment = NSTextAlignmentRight;
         _commitBar.userInteractionEnabled = true;

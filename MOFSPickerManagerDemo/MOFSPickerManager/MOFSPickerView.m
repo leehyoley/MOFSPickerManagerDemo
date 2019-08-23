@@ -60,7 +60,7 @@
     
     CGRect initialFrame;
     if (CGRectIsEmpty(frame)) {
-        initialFrame = CGRectMake(0, self.toolBar.frame.size.height, UISCREEN_WIDTH, 216);
+        initialFrame = CGRectMake(0, self.toolBar.frame.size.height, UISCREEN_WIDTH, 296);
     } else {
         initialFrame = frame;
     }
@@ -98,7 +98,7 @@
     self.keyMapper = nil;
     self.dataArr = [NSMutableArray arrayWithArray:array];
     [self reloadAllComponents];
-    self.selectedRow = 0;
+    self.selectedRow = array.count / 2;
     NSString *tagStr = [NSString stringWithFormat:@"%ld",(long)self.showTag];
     if (self.needTag)
     {

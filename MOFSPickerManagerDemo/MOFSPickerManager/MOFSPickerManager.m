@@ -80,6 +80,25 @@
     }];
 }
 
+- (void)showDatePickerWithTag:(NSInteger)tag datePickerMode:(UIDatePickerMode)mode minDate:(NSDate *)minDate maxDate:(NSDate *)maxDate commitBlock:(DatePickerCommitBlock)commitBlock cancelBlock:(DatePickerCancelBlock)cancelBlock {
+    self.datePicker.datePickerMode = mode;
+    
+    self.datePicker.toolBar.cancelBarTitle = @"取消";
+    self.datePicker.toolBar.commitBarTitle = @"确定";
+    
+    self.datePicker.minimumDate = minDate;
+    self.datePicker.maximumDate = maxDate;
+    [self.datePicker showMOFSDatePickerViewWithTag:tag firstDate:nil commit:^(NSDate *date) {
+        if (commitBlock) {
+            commitBlock(date);
+        }
+    } cancel:^{
+        if (cancelBlock) {
+            cancelBlock();
+        }
+    }];
+}
+
 - (void)showDatePickerWithTag:(NSInteger)tag title:(NSString *)title cancelTitle:(NSString *)cancelTitle commitTitle:(NSString *)commitTitle datePickerMode:(UIDatePickerMode)mode commitBlock:(DatePickerCommitBlock)commitBlock cancelBlock:(DatePickerCancelBlock)cancelBlock {
     self.datePicker.datePickerMode = mode;
     

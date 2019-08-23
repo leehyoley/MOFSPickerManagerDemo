@@ -37,7 +37,7 @@
     
     CGRect initialFrame;
     if (CGRectIsEmpty(frame)) {
-        initialFrame = CGRectMake(0, self.toolBar.frame.size.height, UISCREEN_WIDTH, 216);
+        initialFrame = CGRectMake(0, self.toolBar.frame.size.height, UISCREEN_WIDTH, 296);
     } else {
         initialFrame = frame;
     }
@@ -45,7 +45,7 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         self.datePickerMode = UIDatePickerModeDate;
-        
+        self.maximumDate = NSDate.date;
         [self initBgView];
     }
     return self;
